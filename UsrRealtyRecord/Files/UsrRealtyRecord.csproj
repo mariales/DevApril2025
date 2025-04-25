@@ -554,10 +554,7 @@
 	</ItemGroup>
 	<ItemGroup Label="Standalone package external assembly references" />
 	<ItemGroup Label="Entity Files">
-		<Compile Remove="$(RelativePkgFolderPath)/UsrRealtyStore/Schemas/UsrRealtyOfferType/UsrRealtyOfferType.cs" Condition="Exists('$(RelativePkgFolderPath)/UsrRealtyStore/Schemas/UsrRealtyOfferType/UsrRealtyOfferType.cs')" />
-		<Compile Remove="$(RelativePkgFolderPath)/UsrRealtyStore/Schemas/UsrRealtyStore/UsrRealtyStore.cs" Condition="Exists('$(RelativePkgFolderPath)/UsrRealtyStore/Schemas/UsrRealtyStore/UsrRealtyStore.cs')" />
-		<Compile Remove="$(RelativePkgFolderPath)/UsrRealtyStore/Schemas/UsrRealtyType/UsrRealtyType.cs" Condition="Exists('$(RelativePkgFolderPath)/UsrRealtyStore/Schemas/UsrRealtyType/UsrRealtyType.cs')" />
-		<Compile Remove="$(RelativePkgFolderPath)/UsrRealtyStore/Schemas/UsrTypeProperty/UsrTypeProperty.cs" Condition="Exists('$(RelativePkgFolderPath)/UsrRealtyStore/Schemas/UsrTypeProperty/UsrTypeProperty.cs')" />
+		<Compile Remove="$(RelativePkgFolderPath)/UsrRealtyRecord/Schemas/UsrTypeProperty/UsrTypeProperty.cs" Condition="Exists('$(RelativePkgFolderPath)/UsrRealtyRecord/Schemas/UsrTypeProperty/UsrTypeProperty.cs')" />
 	</ItemGroup>
 	<ItemGroup Label="3rd Party References"></ItemGroup>
 	<Target Name="Paths" BeforeTargets="BeforeCompile">

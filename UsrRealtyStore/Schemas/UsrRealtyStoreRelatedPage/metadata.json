@@ -1,0 +1,28 @@
+{
+  "MetaData": {
+    "Schema": {
+      "ManagerName": "AddonSchemaManager",
+      "UId": "7bdea99f-ccbf-4a97-a714-7fd538a4e3e9",
+      "A2": "UsrRealtyStoreRelatedPage",
+      "A5": "6f71e54c-1960-40c9-94f6-073fd67699ab",
+      "B1": [],
+      "B2": [],
+      "B3": [],
+      "B6": "5530927f-22ea-e7c9-4ccf-506d3a6c2ed2",
+      "B8": "0.0.0.0",
+      "AD1": "0ff05e59-0a55-4ac3-a58e-0304711508a4",
+      "AD2": "EntitySchemaManager",
+      "AD3": "RelatedPage",
+      "AD5": "3a2d6f51-1bfc-4c17-aacb-b53de4866b7c",
+      "AD4": {
+        "Pages": [
+          {
+            "UId": "c518bb79-158e-48dc-a8a0-96c528b65db3",
+            "PageSchemaUId": "7c56bc5a-f21a-4435-be38-8c1690b1059d",
+            "IsDefault": true
+          }
+        ]
+      }
+    }
+  }
+}
