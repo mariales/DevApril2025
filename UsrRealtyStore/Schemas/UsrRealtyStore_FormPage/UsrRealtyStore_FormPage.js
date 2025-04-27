@@ -124,6 +124,51 @@ define("UsrRealtyStore_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/*
 			},
 			{
 				"operation": "insert",
+				"name": "Percent",
+				"values": {
+					"layoutConfig": {
+						"column": 1,
+						"row": 4,
+						"colSpan": 1,
+						"rowSpan": 1
+					},
+					"type": "crt.NumberInput",
+					"label": "$Resources.Strings.PDS_UsrOfferTypeUsrCommissionPorcent_avoefxe",
+					"control": "$PDS_UsrOfferTypeUsrCommissionPorcent_avoefxe",
+					"readonly": true,
+					"placeholder": "",
+					"labelPosition": "auto",
+					"tooltip": ""
+				},
+				"parentName": "SideAreaProfileContainer",
+				"propertyName": "items",
+				"index": 3
+			},
+			{
+				"operation": "insert",
+				"name": "Commission",
+				"values": {
+					"layoutConfig": {
+						"column": 1,
+						"row": 5,
+						"colSpan": 1,
+						"rowSpan": 1
+					},
+					"type": "crt.NumberInput",
+					"label": "$Resources.Strings.PDS_UsrCommission_m2j3tn4",
+					"labelPosition": "auto",
+					"control": "$PDS_UsrCommission_m2j3tn4",
+					"visible": true,
+					"readonly": true,
+					"placeholder": "",
+					"tooltip": ""
+				},
+				"parentName": "SideAreaProfileContainer",
+				"propertyName": "items",
+				"index": 4
+			},
+			{
+				"operation": "insert",
 				"name": "Type",
 				"values": {
 					"layoutConfig": {
@@ -190,31 +235,15 @@ define("UsrRealtyStore_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/*
 					"label": "$Resources.Strings.PDS_UsrComment_tlq08w9",
 					"labelPosition": "auto",
 					"control": "$PDS_UsrComment_tlq08w9",
-					"multiline": false
+					"multiline": false,
+					"visible": false,
+					"readonly": false,
+					"placeholder": "",
+					"tooltip": ""
 				},
 				"parentName": "GeneralInfoTabContainer",
 				"propertyName": "items",
 				"index": 2
-			},
-			{
-				"operation": "insert",
-				"name": "Title",
-				"values": {
-					"layoutConfig": {
-						"column": 2,
-						"row": 2,
-						"colSpan": 1,
-						"rowSpan": 1
-					},
-					"type": "crt.Input",
-					"label": "$Resources.Strings.PDS_UsrTitle_czxjtsx",
-					"labelPosition": "auto",
-					"control": "$PDS_UsrTitle_czxjtsx",
-					"multiline": false
-				},
-				"parentName": "GeneralInfoTabContainer",
-				"propertyName": "items",
-				"index": 3
 			}
 		]/**SCHEMA_VIEW_CONFIG_DIFF*/,
 		viewModelConfigDiff: /**SCHEMA_VIEW_MODEL_CONFIG_DIFF*/[
@@ -254,9 +283,14 @@ define("UsrRealtyStore_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/*
 							"path": "PDS.UsrComment"
 						}
 					},
-					"PDS_UsrTitle_czxjtsx": {
+					"PDS_UsrCommission_m2j3tn4": {
 						"modelConfig": {
-							"path": "PDS.UsrTitle"
+							"path": "PDS.UsrCommission"
+						}
+					},
+					"PDS_UsrOfferTypeUsrCommissionPorcent_avoefxe": {
+						"modelConfig": {
+							"path": "PDS.UsrOfferTypeUsrCommissionPorcent_avoefxe"
 						}
 					}
 				}
@@ -290,14 +324,36 @@ define("UsrRealtyStore_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/*
 					"PDS": {
 						"type": "crt.EntityDataSource",
 						"config": {
-							"entitySchemaName": "UsrRealtyStore"
+							"entitySchemaName": "UsrRealtyStore",
+							"attributes": {
+								"UsrOfferTypeUsrCommissionPorcent_avoefxe": {
+									"path": "UsrOfferType.UsrCommissionPorcent",
+									"type": "ForwardReference"
+								}
+							}
 						},
 						"scope": "page"
 					}
 				}
 			}
 		]/**SCHEMA_MODEL_CONFIG_DIFF*/,
-		handlers: /**SCHEMA_HANDLERS*/[]/**SCHEMA_HANDLERS*/,
+		handlers: /**SCHEMA_HANDLERS*/[
+			{
+				request: "crt.HandleViewModelAttributeChangeRequest",
+				/* The custom implementation of the system query handler. */
+				handler: async (request, next) => {
+      					if (request.attributeName === 'PDS_UsrPrice_wzkfck0' || 				             // if price changed
+					   request.attributeName === 'PDS_UsrOfferTypeUsrCommissionPorcent_avoefxe' ) { 		// or percent changed
+						var price = await request.$context.PDS_UsrPrice_wzkfck0;
+						var percent = await request.$context.PDS_UsrOfferTypeUsrCommissionPorcent_avoefxe;
+						var commission = price * percent / 100;
+						request.$context.PDS_UsrCommission_m2j3tn4 = commission;
+					}
+					/* Call the next handler if it exists and return its result. */
+					return next?.handle(request);
+				}
+			}
+		]/**SCHEMA_HANDLERS*/,
 		converters: /**SCHEMA_CONVERTERS*/{}/**SCHEMA_CONVERTERS*/,
 		validators: /**SCHEMA_VALIDATORS*/{}/**SCHEMA_VALIDATORS*/
 	};
