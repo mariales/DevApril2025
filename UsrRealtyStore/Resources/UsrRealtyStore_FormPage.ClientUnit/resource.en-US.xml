@@ -6,7 +6,16 @@
 			<Item Name="LocalizableStrings.addRecord_67ba7xd_caption.Value" Value="Add new" />
 			<Item Name="LocalizableStrings.addRecord_c0sm3cy_caption.Value" Value="Add new" />
 			<Item Name="LocalizableStrings.addRecord_cnydlpq_caption.Value" Value="Add new" />
+			<Item Name="LocalizableStrings.AreaCannotBeLess.Value" Value="Area cannot be less than 0" />
+			<Item Name="LocalizableStrings.ExpansionPanel_toeon2e_title.Value" Value="Realty store visit" />
+			<Item Name="LocalizableStrings.GridDetailAddBtn_9diga8g_caption.Value" Value="New" />
+			<Item Name="LocalizableStrings.GridDetailExportDataBtn_4o00fpt_caption.Value" Value="Export to Excel" />
+			<Item Name="LocalizableStrings.GridDetailImportDataBtn_ym5jhno_caption.Value" Value="Data import" />
+			<Item Name="LocalizableStrings.GridDetailRefreshBtn_arxm42u_caption.Value" Value="Refresh" />
+			<Item Name="LocalizableStrings.GridDetailSearchFilter_f5p92hx_placeholder.Value" Value="Search" />
+			<Item Name="LocalizableStrings.GridDetailSettingsBtn_w956axs_caption.Value" Value="Actions" />
 			<Item Name="LocalizableStrings.NumberInput_e50a6sl_label.Value" Value="Number" />
+			<Item Name="LocalizableStrings.PriceCannotBeLess.Value" Value="Price cannot be less than 0" />
 		</Items>
 	</Group>
 </Resources>

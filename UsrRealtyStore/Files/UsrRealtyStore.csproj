@@ -331,6 +331,7 @@
 	<ItemGroup Label="Entity Files">
 		<Compile Remove="$(RelativePkgFolderPath)/UsrRealtyStore/Schemas/UsrRealtyOfferType/UsrRealtyOfferType.cs" Condition="Exists('$(RelativePkgFolderPath)/UsrRealtyStore/Schemas/UsrRealtyOfferType/UsrRealtyOfferType.cs')" />
 		<Compile Remove="$(RelativePkgFolderPath)/UsrRealtyStore/Schemas/UsrRealtyStore/UsrRealtyStore.cs" Condition="Exists('$(RelativePkgFolderPath)/UsrRealtyStore/Schemas/UsrRealtyStore/UsrRealtyStore.cs')" />
+		<Compile Remove="$(RelativePkgFolderPath)/UsrRealtyStore/Schemas/UsrRealtyStoreVisit/UsrRealtyStoreVisit.cs" Condition="Exists('$(RelativePkgFolderPath)/UsrRealtyStore/Schemas/UsrRealtyStoreVisit/UsrRealtyStoreVisit.cs')" />
 		<Compile Remove="$(RelativePkgFolderPath)/UsrRealtyStore/Schemas/UsrRealtyType/UsrRealtyType.cs" Condition="Exists('$(RelativePkgFolderPath)/UsrRealtyStore/Schemas/UsrRealtyType/UsrRealtyType.cs')" />
 		<Compile Remove="$(RelativePkgFolderPath)/UsrRealtyStore/Schemas/UsrTypeProperty/UsrTypeProperty.cs" Condition="Exists('$(RelativePkgFolderPath)/UsrRealtyStore/Schemas/UsrTypeProperty/UsrTypeProperty.cs')" />
 	</ItemGroup>

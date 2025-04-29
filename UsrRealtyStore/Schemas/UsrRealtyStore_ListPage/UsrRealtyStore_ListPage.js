@@ -92,7 +92,22 @@ define("UsrRealtyStore_ListPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/*
 							"dataValueType": 7,
 							"width": 221.00001525878906
 						}
-					]
+					],
+					"features": {
+						"rows": {
+							"selection": {
+								"enable": true,
+								"multiple": true
+							}
+						},
+						"editable": {
+							"enable": false,
+							"itemsCreation": false,
+							"floatingEditPanel": false
+						}
+					},
+					"visible": true,
+					"fitContent": true
 				}
 			}
 		]/**SCHEMA_VIEW_CONFIG_DIFF*/,
